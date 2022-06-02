@@ -10,11 +10,11 @@ This repos is basically divided in two parts :
 
 ### Database
 
-The [Database](https://github.com/YumeT023/Trans-postgres/tree/main/Database) part will contains two parts.
+The [Database](https://github.com/YumeT023/Trans-postgres/tree/main/Database) basically contains two parts.
 
 - _Transport.sql_ : contains the database creation querie.
 - _Queries.sql_ : contains all the basic SELECT queries
 
 ### FakerJs
 
-The [FakerJs](https://github.com/YumeT023/Trans-postgres/tree/main/FakerJs) part is the javascript code containing the script used to generate all the insert in each table
+The [FakerJs](https://github.com/YumeT023/Trans-postgres/tree/main/FakerJs) part is the javascript code containing the script used to generate all the insert in each table (using FakerJs)
