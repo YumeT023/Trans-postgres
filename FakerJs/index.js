@@ -6,7 +6,6 @@ import { faker as f } from '@faker-js/faker';
  */
 
 // === constant === //
-    const INSERT = `INSERT INTO Transport values \n`;
     const N = 50;
 // === end === //
 
@@ -22,5 +21,5 @@ for (let id = 0; id < N; id ++) {
 
     client += (id !== N - 1) ? ',\n' : '\n;';
 }
-client = INSERT.concat(client);
-console.log(client)
+client = "INSERT INTO CLIENT values\n".concat(client);
+console.log(client);
