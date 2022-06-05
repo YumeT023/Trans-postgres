@@ -18,8 +18,9 @@ for (let id = 0; id < N; id ++) {
     const cin = f.helpers.replaceCreditCardSymbols('#{12}');
     const contact = f.helpers.replaceCreditCardSymbols('03[2-4] ## ### ##');
 
-    client += ` (${fname}, ${lname}, ${cin}, ${contact})`;
+    client += ` (${id + 1}, ${fname}, ${lname}, ${cin}, ${contact})`;
 
     client += (id !== N - 1) ? ',\n' : '\n;';
 }
 client = INSERT.concat(client);
+console.log(client)
