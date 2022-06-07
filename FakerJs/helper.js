@@ -9,3 +9,16 @@ export const getBasicUserInfo = () => {
         email: f.internet.email()
     };
 }
+export const separateOrEnd = (i, N) => {
+    return (i !== N) ? 
+            ',\n' : 
+            '\n;';
+}
+
+export const getVehicleInfo = () => {
+    return {
+        matricule: f.helpers.replaceSymbols("#### ???"),
+        status: f.helpers.arrayElement([true, false]),
+        nb_place: f.helpers.arrayElement([16, 10])
+    }
+}

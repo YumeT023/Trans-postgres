@@ -1,5 +1,4 @@
-const client = 
-`INSERT INTO CLIENT values
+INSERT INTO CLIENT values
   (1, 'Valentin', 'Zboncak', '317146206041', '0333405789'),
   (2, 'Muriel', 'Powlowski', '233348795472', '0348463919'),
   (3, 'Monserrate', 'Pagac', '022166417965', '0347959109'),
@@ -33,7 +32,7 @@ const client =
   (31, 'Eldred', 'Hettinger', '272984670018', '0322354674'),
   (32, 'Kamren', 'Rath', '725913203743', '0333924350'),
   (33, 'Maurice', 'Jaskolski', '562362294314', '0346333027'),
-  (34, 'Stan', 'O'Conner', '508431645149', '0331784528'),
+  (34, 'Stan', 'OConner', '508431645149', '0331784528'),
   (35, 'Edd', 'Prosacco', '809563285352', '0320407345'),
   (36, 'Francisca', 'Flatley', '021261551623', '0326392018'),
   (37, 'Uriel', 'Prohaska', '664191491978', '0347996252'),
@@ -50,10 +49,8 @@ const client =
   (48, 'Toney', 'Hayes', '007573620069', '0349689383'),
   (49, 'Wilfredo', 'Murray', '510084113872', '0342340512'),
   (50, 'Sammy', 'Greenfelder', '361186518231', '0337755425')
-;`;
+;
 
-
-const chauffeur = `
 INSERT INTO CHAUFFEUR values
   (1, 'Domenico', 'Mitchell', '132240646689', '0323204291', 'Ed.Bode@yahoo.com'),
   (2, 'Providenci', 'Hand', '064193723961', '0323859202', 'Jamil27@hotmail.com'),
@@ -63,7 +60,7 @@ INSERT INTO CHAUFFEUR values
   (6, 'Henriette', 'Johnson', '713390907454', '0333847787', 'Burley.Schultz13@yahoo.com'),  
   (7, 'Gilbert', 'Douglas', '747479772790', '0341602641', 'Dillon.King71@hotmail.com'),     
   (8, 'Carole', 'Wuckert', '583835045106', '0343796944', 'Hank_Daniel@yahoo.com'),
-  (9, 'Ilene', 'O'Keefe', '190442226633', '0328807624', 'Ova.Rice11@yahoo.com'),
+  (9, 'Ilene', 'OKeefe', '190442226633', '0328807624', 'Ova.Rice11@yahoo.com'),
   (10, 'Mia', 'Schamberger', '387361204510', '0323138849', 'Willa.Kovacek@hotmail.com'),    
   (11, 'Adolphus', 'Hartmann', '410659507809', '0335914828', 'Shyanne94@yahoo.com'),        
   (12, 'Arely', 'Rice', '779255932972', '0337123562', 'Teresa.Wunsch24@yahoo.com'),
@@ -105,4 +102,57 @@ INSERT INTO CHAUFFEUR values
   (48, 'Tracy', 'Bednar', '751870739750', '0333816199', 'Bethany57@yahoo.com'),
   (49, 'Freda', 'Jones', '087241122681', '0337564476', 'Delta76@hotmail.com'),
   (50, 'Godfrey', 'Stark', '116612396032', '0328247965', 'Lia_Feil@gmail.com')
-;`
+;
+
+INSERT INTO VEHICULE values        
+    ('1484 UZD', 10, false, 1), 
+    ('2967 CPE', 10, false, 2), 
+    ('4056 EJU', 16, true, 3),  
+    ('4862 GWW', 16, true, 4),  
+    ('3293 ROH', 16, true, 5),  
+    ('6588 XTB', 16, true, 6),  
+    ('6475 TXG', 16, false, 7), 
+    ('6759 DFQ', 16, false, 8), 
+    ('1913 NDZ', 10, true, 9),  
+    ('0378 GPH', 10, true, 10), 
+    ('7567 NSY', 16, true, 11), 
+    ('9260 NRU', 10, false, 12),
+    ('9015 DMM', 16, false, 13),
+    ('7985 MDQ', 10, true, 14), 
+    ('7434 QHH', 10, true, 15), 
+    ('3880 SNB', 10, true, 16), 
+    ('1872 XFK', 16, false, 17),
+    ('2504 SOD', 16, false, 18),
+    ('5539 KPY', 10, false, 19),
+    ('8787 YWT', 10, false, 20),
+    ('2619 KSZ', 10, true, 21), 
+    ('4206 HBQ', 16, true, 22), 
+    ('7773 CJH', 10, true, 23), 
+    ('7667 JYH', 10, false, 24),
+    ('8267 JEM', 10, true, 25), 
+    ('9503 GSM', 10, false, 26),
+    ('5997 LPE', 10, false, 27),
+    ('4244 QNO', 10, false, 28),
+    ('8240 FYL', 16, false, 29),
+    ('2445 QSO', 16, false, 30),
+    ('5247 KEN', 10, true, 31),
+    ('4237 WON', 10, true, 32),
+    ('9421 JTK', 16, true, 33),
+    ('2890 NPC', 10, false, 34),
+    ('0059 TJY', 16, true, 35),
+    ('6208 LGN', 16, true, 36),
+    ('0560 DDQ', 16, true, 37),
+    ('8701 ITE', 10, false, 38),
+    ('4195 SAJ', 16, false, 39),
+    ('4099 IXJ', 10, true, 40),
+    ('8623 OCS', 10, true, 41),
+    ('5688 LCA', 10, false, 42),
+    ('4332 EBB', 16, false, 43),
+    ('7746 JKX', 10, false, 44),
+    ('0383 KZY', 16, true, 45),
+    ('4575 SRV', 16, false, 46),
+    ('1187 WCU', 16, true, 47),
+    ('0780 WNH', 16, false, 48),
+    ('6244 DNQ', 16, false, 49),
+    ('9184 MYN', 16, false, 50)
+;

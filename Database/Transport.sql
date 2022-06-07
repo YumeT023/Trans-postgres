@@ -34,7 +34,8 @@ CREATE TABLE ville(
 
 -- Table vehicule
 CREATE TABLE vehicule(
-    matricule varchar(8) primary key,
+    id_vehicule serial primary key,
+    matricule varchar(8) not null,
     nb_place int not null, 
     status boolean
 );
@@ -44,9 +45,8 @@ CREATE TABLE voyage(
     id_voyage bigserial primary key,
     date_voyage date not null, 
     heure_dep time not null, 
-    nb_place_dispo int check(nb_place_dispo > 0),
     id_offre int REFERENCES offre(id_offre), 
-    matricule varchar(8) REFERENCES vehicule(matricule),
+    id_vehicule serial references vehicule(id_vehicule)
     id_ville_depart int not null REFERENCES ville(id_ville),
     id_ville_arrivee int not null REFERENCES ville(id_ville)
 );
@@ -63,7 +63,7 @@ CREATE TABLE reserver(
 -- Table conduire
 CREATE TABLE conduire(
     id_chauffeur int not null REFERENCES chauffeur(id_chauffeur) not null,
-    matricule varchar(8) not null REFERENCES vehicule(matricule)
+    id_vehicule serial references vehicule(id_vehicule)
 );
 
 -- Table depense 
@@ -75,6 +75,6 @@ CREATE TABLE depense(
 
 -- Table recevoir 
 CREATE TABLE recevoir(
-    matricule varchar(8) not null REFERENCES vehicule(matricule),
+    id_vehicule serial references vehicule(id_vehicule)
     id_depense int not null REFERENCES depense(id_depense)
 );
