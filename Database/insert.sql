@@ -156,3 +156,8 @@ INSERT INTO VEHICULE values
   ( 49, '1638 KWW', 10, true),
   ( 50, '7737 EYM', 16, false)
 ;
+
+INSERT INTO OFFRE values 
+  (1, 30000, 'light'),
+  (2, 50000, 'premium')
+;
