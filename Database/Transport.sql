@@ -11,7 +11,7 @@ CREATE TABLE client(
 
 -- Table chauffeur
 CREATE TABLE chauffeur (
-    id_chauffeur serial primary key, 
+    id_chauffeur serial primary key,
     nom varchar(150) not null,
     prenom varchar(150),
     cin varchar(12),
@@ -46,13 +46,13 @@ CREATE TABLE voyage(
     date_voyage date not null, 
     heure_dep time not null, 
     id_offre int REFERENCES offre(id_offre), 
-    id_vehicule serial references vehicule(id_vehicule)
+    id_vehicule serial references vehicule(id_vehicule),
     id_ville_depart int not null REFERENCES ville(id_ville),
     id_ville_arrivee int not null REFERENCES ville(id_ville)
 );
 
 -- Table reserver 
-CREATE TABLE reserver(
+CREATE TABLE reserver (
     id_client int not null REFERENCES client(id_client),
     id_voyage int REFERENCES voyage(id_voyage),
     date_reservation date DEFAULT current_date,
@@ -61,20 +61,20 @@ CREATE TABLE reserver(
 );
 
 -- Table conduire
-CREATE TABLE conduire(
+CREATE TABLE conduire (
     id_chauffeur int not null REFERENCES chauffeur(id_chauffeur) not null,
     id_vehicule serial references vehicule(id_vehicule)
 );
 
 -- Table depense 
 CREATE TABLE depense(
-    id_depense serial primary key, 
+    id_depense serial primary key,
     essence float, 
     maintenance int
 );
 
--- Table recevoir 
+-- Table recevoir
 CREATE TABLE recevoir(
-    id_vehicule serial references vehicule(id_vehicule)
-    id_depense int not null REFERENCES depense(id_depense)
+    id_vehicule serial references vehicule(id_vehicule),
+    id_depense int REFERENCES depense(id_depense)
 );

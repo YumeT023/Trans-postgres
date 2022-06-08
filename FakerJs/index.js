@@ -40,7 +40,7 @@ import { getBasicUserInfo, getVehicleInfo, separateOrEnd } from './helper.js';
     let vehicule = '';
     while (id <= N) {
         const {matricule, nb_place, status} = getVehicleInfo();
-        vehicule += `       ('${matricule}', ${nb_place}, ${status}, ${id})`;
+        vehicule += `       ( ${id}, '${matricule}', ${nb_place}, ${status})`;
         vehicule += separateOrEnd(id, N);
         id ++;
     }
