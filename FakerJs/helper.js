@@ -22,3 +22,8 @@ export const getVehicleInfo = () => {
         nb_place: f.helpers.arrayElement([16, 10])
     }
 }
+export const getCityName = ()=>{
+    return{
+        nom_ville: f.address.cityName()
+    }
+}
