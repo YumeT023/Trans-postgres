@@ -49,9 +49,13 @@ import { getBasicUserInfo, getVehicleInfo, separateOrEnd } from './helper.js';
 /* -- end -- */
 
 /*--VILLE--*/
-export const getCityName = ()=>{
-    return{
-        nom_ville: f.address.cityName()
+let ville ='';
+    while(id<=N){
+        const {nom_ville}=getCityName();
+        ville+=`       (${id}, '${nom_ville}')`;
+        ville+= separateOrEnd(id,N)
+        id++;
     }
-}
+    ville="INSERT INTO ville VALUES\n".concat(ville);
+    console.log(ville);
 /*--END*--*/
