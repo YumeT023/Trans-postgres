@@ -10,7 +10,7 @@ select nom from client inner join reserver on client.id_client = reserver.id_cli
 select count(*) from client inner join  reserver on client.id_client = reserver.id_client where client.cin is not null; 
 
 -- liste des voyages et leurs destinations
-select id_voyage, date_voyage, nom_ville from voyage left join ville on voyage.id_ville_arrivee = ville.id_ville;
+select id_voyage, nom_ville from voyage left join ville on voyage.id_ville_arrivee = ville.id_ville;
 
 -- les reservations des clients
 select * from reservation
