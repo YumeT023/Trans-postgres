@@ -1,27 +1,14 @@
--- BEWARE: for now those queries are not tested yet, but will be later on
+//nombre de clients 
+SELECT count(*) FROM client;
 
--- nombre de clients
-SELECT COUNT(*) FROM CLIENT;
+//Toutes les réservations sur un voyage 
+SELECT * FROM reserver INNER JOIN voyage ON id_ville_arrivee = 2;
 
--- Quand est ce que tel ou tel client a rÃ©servÃ©
-select nom from client inner join reserver on client.id_client = reserver.id_client;
+//tous les voyages du jour/du mois/de l'année/de la semaine 
+Du jour : SELECT nom,matricule,nom_ville,heure_dep FROM chauffeurs,véhicule INNER JOIN conduire ON conduire.id_chauffeur = conduire.id_vehicule INNER JOIN voyage ON date_voyage = current_date INNER JOIN ville ON ville.id_ville = voyage.id_ville_arrivee;
 
--- nombre de mineur qui participe Ã  un voyage
-select count(*) from client inner join  reserver on client.id_client = reserver.id_client where client.cin is not null; 
+Du mois : SELECT nom,matricule,nom_ville,heure_dep FROM chauffeurs,véhicule INNER JOIN conduire ON conduire.id_chauffeur = conduire.id_vehicule INNER JOIN voyage ON (date_part('month',date_voyage) = date_part('month', current_date)) INNER JOIN ville ON ville.id_ville = voyage.id_ville_arrivee;
 
--- liste des voyages et leurs destinations
-select id_voyage, nom_ville from voyage left join ville on voyage.id_ville_arrivee = ville.id_ville;
+De l'année : SELECT nom,matricule,nom_ville,heure_dep FROM chauffeurs,véhicule INNER JOIN conduire ON conduire.id_chauffeur = conduire.id_vehicule INNER JOIN voyage ON (date_part('year',date_voyage) = date_part('year', current_date)) INNER JOIN ville ON ville.id_ville = voyage.id_ville_arrivee;
 
--- les reservations des clients
-select * from reservation
-
---  aficher toutes les depenses de chaque vÃ©hicule
-select * from vehicule inner join recevoir on vehicule.id_vehicule = recevoir.id_vehicule inner join depense on recevoir.id_depense = depense.id_depense;
-
--- Liste des vehicules qui ont encore des places libre dans telle ville vers telle ville
-select vehicule.id_vehicule, vehicule.matricule from vehicule 
-    left join voyage on voyage.id_vehicule = vehicule.id_vehicule 
-    left join ville as v1 on v1.id_ville = voyage.id_ville_depart
-    left join ville as v2 on v2.id_ville = voyage.id_ville_arrivee
-    where v1.nom_ville = 'any' AND v2.nom_ville = 'another'
-    AND vehicule.nb_place - (select count(*) from reserver) > 0;
+Du mois : SELECT nom,matricule,nom_ville,heure_dep FROM chauffeurs,véhicule INNER JOIN conduire ON conduire.id_chauffeur = conduire.id_vehicule INNER JOIN voyage ON (date_trunc('week',date_voyage) = date_trunc('week', current_date)) INNER JOIN ville ON ville.id_ville = voyage.id_ville_arrivee;
