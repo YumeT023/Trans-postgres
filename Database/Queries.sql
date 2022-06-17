@@ -11,7 +11,7 @@ select count(*) from client inner join  reserver on client.id_client = reserver.
 select id_voyage, nom_ville from voyage left join ville on voyage.id_ville_arrivee = ville.id_ville;
 
 -- les reservations des clients
-select * from reservation
+select * from reserver;
 
 --  aficher toutes les depenses de chaque véhicule
 select * from vehicule inner join recevoir on vehicule.id_vehicule = recevoir.id_vehicule inner join depense on recevoir.id_depense = depense.id_depense;
@@ -42,3 +42,9 @@ SELECT nom,matricule,nom_ville,heure_dep FROM chauffeurs,véhicule INNER JOIN co
 
 --tous les vehicules qui ont participé à une voyage à une date précise
 select matricule from vehicule inner join voyage on voyage.date_voyage='2022-06-17' and vehicule.id_vehicule=voyage.id_vehicule;
+
+-- la destination la plus prise
+SELECT id_ville_arrive from voyage order by DESC limit 1;
+
+-- vehicule conduit par tel ou tel chauffeur
+SELECT * from conduire;
