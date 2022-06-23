@@ -16,13 +16,13 @@ select * from reserver;
 --  aficher toutes les depenses de chaque véhicule
 select * from vehicule inner join recevoir on vehicule.id_vehicule = recevoir.id_vehicule inner join depense on recevoir.id_depense = depense.id_depense;
 
--- Liste des vehicules qui ont encore des places libre dans telle ville vers telle ville
-select vehicule.id_vehicule, vehicule.matricule from vehicule 
-    left join voyage on voyage.id_vehicule = vehicule.id_vehicule 
-    left join ville as v1 on v1.id_ville = voyage.id_ville_depart
-    left join ville as v2 on v2.id_ville = voyage.id_ville_arrivee
-    where v1.nom_ville = 'any' AND v2.nom_ville = 'another'
-    AND vehicule.nb_place - (select count(*) from reserver) > 0;
+-- -- Liste des vehicules qui ont encore des places libre dans telle ville vers telle ville
+-- select vehicule.id_vehicule, vehicule.matricule from vehicule 
+--     left join voyage on voyage.id_vehicule = vehicule.id_vehicule 
+--     left join ville as v1 on v1.id_ville = voyage.id_ville_depart
+--     left join ville as v2 on v2.id_ville = voyage.id_ville_arrivee
+--     where v1.nom_ville = 'any' AND v2.nom_ville = 'another'
+--     AND vehicule.nb_place - (select count(*) from reserver) > 0;
     
 --Toutes les réservations sur un voyage 
 SELECT * FROM reserver INNER JOIN voyage ON id_ville_arrivee = 2;
