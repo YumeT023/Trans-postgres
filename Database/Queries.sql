@@ -47,4 +47,11 @@ select matricule from vehicule inner join voyage on voyage.date_voyage='2022-06-
 SELECT id_ville_arrive from voyage order by DESC limit 1;
 
 -- vehicule conduit par tel ou tel chauffeur
-SELECT * from conduire;
+select vehicule.id_vehicule, 
+        matricule 
+from vehicule 
+    inner join conduire on
+        conduire.id_vehicule = vehicule.id_vehicule
+    inner join chauffeur on
+        chauffeur.id_chauffeur = conduire.id_chauffeur
+where chauffeur = 'any';
